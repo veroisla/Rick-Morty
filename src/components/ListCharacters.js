@@ -1,4 +1,7 @@
 import React from 'react';
+import Card from '../components/Card';
+
+import '../styles/components/ListCharacters.scss';
 
 function ListCharacters(props) {
   if (props.dataCharacters.length === 0) {
@@ -7,8 +10,7 @@ function ListCharacters(props) {
     const characterList = props.dataCharacters.map((character, index) => {
       return (
         <li key={index}>
-          <h4>{character.name}</h4>
-          <img src={character.image} alt="" />
+          <Card character={character} />
         </li>
       );
     });

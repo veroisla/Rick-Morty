@@ -1,4 +1,6 @@
 import React, { useEffect, useState } from 'react';
+import '../styles/components/App.scss';
+
 import getApiData from '../services/characterApi';
 import ListCharacters from './ListCharacters';
 
