@@ -1,4 +1,6 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
+
 import '../styles/components/Card.scss';
 
 function Card(props) {
@@ -26,6 +28,7 @@ function Card(props) {
           {props.character.status}
         </div>
       </div>
+      <Link to={`/character/${props.character.id}`}>Más info</Link>
     </div>
   );
 }

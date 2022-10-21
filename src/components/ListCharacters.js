@@ -7,13 +7,15 @@ function ListCharacters(props) {
   if (props.dataCharacters.length === 0) {
     return <p>No hay personajes con ese filtro</p>;
   } else {
-    const characterList = props.dataCharacters.map((character, index) => {
-      return (
-        <li key={index}>
-          <Card character={character} />
-        </li>
-      );
-    });
+    const characterList = props.dataCharacters.results.map(
+      (character, index) => {
+        return (
+          <li key={index}>
+            <Card character={character} />
+          </li>
+        );
+      }
+    );
 
     return (
       <section>
