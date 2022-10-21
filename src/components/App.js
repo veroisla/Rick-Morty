@@ -19,7 +19,9 @@ function App() {
 
   return (
     <>
-      <ListCharacters dataCharacters={dataCharacters} />
+      <div className="app">
+        <ListCharacters dataCharacters={dataCharacters} />
+      </div>
     </>
   );
 }

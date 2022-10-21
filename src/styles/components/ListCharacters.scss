@@ -1,2 +1,8 @@
 @import "../core/reset.scss";
 @import "../core/Vars.scss";
+
+.list {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}

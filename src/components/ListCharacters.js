@@ -17,7 +17,7 @@ function ListCharacters(props) {
 
     return (
       <section>
-        <ul>{characterList}</ul>
+        <ul className="list">{characterList}</ul>
       </section>
     );
   }
