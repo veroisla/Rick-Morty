@@ -1,40 +1,32 @@
 import React from 'react';
+import ReactPaginate from 'react-paginate';
+import '../styles/components/Pagination.scss';
 
-function Pagination(props) {
-  const handleClickPrev = (ev) => {
-    props.prevPage(ev.target);
-  };
-  const handleClickNext = (ev) => {
-    props.nextPage(ev.target);
-  };
+function Pagination({ info, pageNumber, setPageNumber }) {
   return (
     <div>
-      <button onClick={handleClickPrev}>Prev</button>
-      <button onClick={handleClickNext}>Next</button>
+      {' '}
+      <ReactPaginate
+        onPageChange={(data) => {
+          setPageNumber(data.selected + 1);
+        }}
+        pageCount={info?.pages}
+        forcePage={pageNumber === 1 ? 0 : pageNumber - 1}
+        className="pagination"
+        nextLabel=">"
+        previousLabel="<"
+        previousClassName="pagination__btn"
+        nextClassName="pagination__btn"
+        pageClassName="pagination__number"
+        activeClassName="pagination__active"
+        pageRangeDisplayed={2}
+        marginPagesDisplayed={1}
+      />
     </div>
   );
 }
 
 export default Pagination;
+// TODO: VISITAR https://www.npmjs.com/package/react-paginate
 
-// import React from 'react';
-
-// const Pagination = ({ setPageNumber }) => {
-//   let next = () => {
-//     setPageNumber((x) => x + 1);
-//   };
-
-//   let prev = () => {
-//     setPageNumber((x) => x - 1);
-//   };
-//   return (
-//     <div>
-//       <button onClick={prev}>Prev</button>
-//       <button onClick={next}>Next</button>
-//     </div>
-//   );
-// };
-
-// export default Pagination;
-
-// La x representa el valor anterior, página 2 por ejemplo, y lo que queremos es que al clicar el boton de next se actualice la pagina al siguente valor, que seria la pagina 3
+// --> Estamos diciendo a la variable pageNumber que se actualice con el valor de data.slected (que es el numero de la pagina en la que estamos) y ponemos +1, porque si no empieza en la pagina 0

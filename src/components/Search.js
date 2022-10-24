@@ -1,7 +1,7 @@
 import React from 'react';
 import '../styles/components/filterByName.scss';
 
-const filterByName = (props) => {
+const search = (props) => {
   const handleSubmit = (ev) => {
     props.preventSubmitForm(ev);
   };
@@ -18,4 +18,4 @@ const filterByName = (props) => {
   );
 };
 
-export default filterByName;
+export default search;

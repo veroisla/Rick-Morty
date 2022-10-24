@@ -5,7 +5,7 @@ import { matchPath, useLocation } from 'react-router';
 import '../styles/components/App.scss';
 
 import ListCharacters from './ListCharacters';
-import FilterByName from './FilterByName';
+import Search from './Search';
 // import CharacterDetail from './CharacterDetail';
 import Pagination from './Pagination';
 
@@ -29,21 +29,10 @@ function App() {
     ev.preventDefault();
   };
 
-  // ------- PAGINATION --------
-  const prevPage = () => {
-    //Para que no retorne páginas -1, -2 le digo cuando pageNumber sea igual a 1, dejas de retornar.
-    if (pageNumber === 1) return;
-    setPageNumber((x) => x - 1);
-  };
-
-  const nextPage = () => {
-    if (pageNumber === 42) return;
-    setPageNumber((x) => x + 1);
-  };
-
   // ------ SEARCH CHARACTER -------
   const searchCharacter = (ev) => {
     setInputSearch(ev.target.value);
+    setPageNumber(1);
   };
 
   return (
@@ -53,17 +42,15 @@ function App() {
           path="/"
           element={
             <>
-              <FilterByName
+              <Search
                 preventSubmitForm={preventSubmitForm}
                 searchCharacter={searchCharacter}
               />
-
               <ListCharacters results={results} />
-
               <Pagination
-                prevPage={prevPage}
                 pageNumber={pageNumber}
-                nextPage={nextPage}
+                info={info}
+                setPageNumber={setPageNumber}
               />
             </>
           }
