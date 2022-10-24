@@ -3,26 +3,26 @@ import Card from '../components/Card';
 
 import '../styles/components/ListCharacters.scss';
 
-function ListCharacters(props) {
-  if (props.dataCharacters.length === 0) {
-    return <p>No hay personajes con ese filtro</p>;
-  } else {
-    const characterList = props.dataCharacters.results.map(
-      (character, index) => {
-        return (
-          <li key={index}>
-            <Card character={character} />
-          </li>
-        );
-      }
-    );
+function ListCharacters({ results }) {
+  // console.log(results);
+  let display;
 
-    return (
-      <section>
-        <ul className="list">{characterList}</ul>
-      </section>
-    );
+  if (results) {
+    display = results.map((character) => {
+      return (
+        <section>
+          <ul>
+            <li key={character.id}>
+              <Card character={character} />
+            </li>
+          </ul>
+        </section>
+      );
+    });
+  } else {
+    display = <p>No chararters found</p>;
   }
+  return <>{display}</>;
 }
 
 export default ListCharacters;

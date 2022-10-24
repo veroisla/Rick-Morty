@@ -1,24 +1,21 @@
 import React from 'react';
 import '../styles/components/filterByName.scss';
 
-function filterByName(props) {
-  const handleChange = (ev) => {
-    props.handleFilterByText(ev.target.value);
-  };
+const filterByName = (props) => {
   const handleSubmit = (ev) => {
-    props.handleSubmit(ev);
+    props.preventSubmitForm(ev);
   };
+
   return (
-    <form action="" onSubmit={handleSubmit}>
+    <form action="" onClick={handleSubmit}>
       <input
         className="search__input"
         type="text"
-        placeholder="Busca producto, deporte..."
-        onChange={handleChange}
-        value={props.inputSearch}
+        placeholder="Search character"
+        onChange={props.searchCharacter}
       ></input>
     </form>
   );
-}
+};
 
 export default filterByName;
