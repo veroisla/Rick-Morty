@@ -1,9 +1,10 @@
 import React from 'react';
+import { propTypes } from 'react-bootstrap/esm/Image';
 import Card from '../components/Card';
 
 import '../styles/components/ListCharacters.scss';
 
-function ListCharacters({ results }) {
+function ListCharacters({ results, inputSearch }) {
   // console.log(results);
   let display;
 
@@ -20,7 +21,7 @@ function ListCharacters({ results }) {
       );
     });
   } else {
-    display = <p>No chararters found</p>;
+    display = <p>No chararters found {inputSearch}</p>;
   }
   return <>{display}</>;
 }

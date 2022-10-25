@@ -6,17 +6,33 @@ import '../styles/components/App.scss';
 
 import ListCharacters from './ListCharacters';
 import Search from './Search';
+import ClearFilters from './ClearFilters';
 // import CharacterDetail from './CharacterDetail';
 import Pagination from './Pagination';
 import AccordionFilters from './AccordionFilters';
+import SpeciesFilter from './SpeciesFilter';
 
 function App() {
   const [dataCharacters, setDataCharacters] = useState([]);
   let { info, results } = dataCharacters;
   const [inputSearch, setInputSearch] = useState('');
   const [pageNumber, setPageNumber] = useState(1);
+  const [filterBySpecies, setFilterBySpecies] = useState(
+    'Human',
+    'Alien',
+    'Humanoid',
+    'Poopybutthole',
+    'Mythological',
+    'Unknow',
+    'Animal',
+    'Disease',
+    'Robot',
+    'Cronenberg',
+    'Planet'
+  );
+  const [filterByStatus, setFilterByStatus] = useState('');
 
-  let api = `https://rickandmortyapi.com/api/character/?page=${pageNumber}&name=${inputSearch}`;
+  let api = `https://rickandmortyapi.com/api/character/?page=${pageNumber}&name=${inputSearch}&status=${filterByStatus}`;
 
   useEffect(() => {
     (async function () {
@@ -36,6 +52,18 @@ function App() {
     setPageNumber(1);
   };
 
+  // ----- FILTER SPECIES ------
+
+  const handleFilterBySpecies = (value) => {
+    setFilterBySpecies(value);
+  };
+
+  // ------ FILTER STATUS -------
+
+  const handleFilterByStatus = (value) => {
+    setFilterByStatus(value);
+  };
+
   return (
     <div className="app">
       <Routes>
@@ -43,12 +71,23 @@ function App() {
           path="/"
           element={
             <>
-              <Search
-                preventSubmitForm={preventSubmitForm}
-                searchCharacter={searchCharacter}
-              />
-              <AccordionFilters />
-              <ListCharacters results={results} />
+              <form action="" onClick={preventSubmitForm}>
+                <Search
+                  preventSubmitForm={preventSubmitForm}
+                  searchCharacter={searchCharacter}
+                />
+                <ClearFilters />
+                <AccordionFilters
+                  handleFilterBySpecies={handleFilterBySpecies}
+                  filterBySpecies={filterBySpecies}
+                  handleFilterByStatus={handleFilterByStatus}
+                  filterByStatus={filterByStatus}
+                  setPageNumber={setPageNumber}
+                />
+              </form>
+
+              <ListCharacters results={results} inputSearch={inputSearch} />
+
               <Pagination
                 pageNumber={pageNumber}
                 info={info}

@@ -1,33 +1,30 @@
 import Accordion from 'react-bootstrap/Accordion';
 import React from 'react';
+import StatusFilter from './StatusFilter';
+import SpeciesFilter from './SpeciesFilter';
 
 import 'bootstrap/dist/css/bootstrap.min.css';
 
-function AccordionFilters() {
+function AccordionFilters(props) {
   return (
     <Accordion>
       <Accordion.Item eventKey="0">
         <Accordion.Header>Species</Accordion.Header>
         <Accordion.Body>
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-          eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad
-          minim veniam, quis nostrud exercitation ullamco laboris nisi ut
-          aliquip ex ea commodo consequat. Duis aute irure dolor in
-          reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
-          pariatur. Excepteur sint occaecat cupidatat non proident, sunt in
-          culpa qui officia deserunt mollit anim id est laborum.
+          <SpeciesFilter
+            handleFilterBySpecies={props.handleFilterBySpecies}
+            filterBySpecies={props.filterBySpecies}
+          />
         </Accordion.Body>
       </Accordion.Item>
       <Accordion.Item eventKey="1">
-        <Accordion.Header>Gender</Accordion.Header>
+        <Accordion.Header>Status</Accordion.Header>
         <Accordion.Body>
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-          eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad
-          minim veniam, quis nostrud exercitation ullamco laboris nisi ut
-          aliquip ex ea commodo consequat. Duis aute irure dolor in
-          reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
-          pariatur. Excepteur sint occaecat cupidatat non proident, sunt in
-          culpa qui officia deserunt mollit anim id est laborum.
+          <StatusFilter
+            handleFilterByStatus={props.handleFilterByStatus}
+            filterByStatus={props.filterByStatus}
+            setPageNumber={props.setPageNumber}
+          />
         </Accordion.Body>
       </Accordion.Item>
     </Accordion>
@@ -35,3 +32,5 @@ function AccordionFilters() {
 }
 
 export default AccordionFilters;
+
+// --> https://react-bootstrap.github.io/components/accordion/
