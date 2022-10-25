@@ -8,6 +8,7 @@ import ListCharacters from './ListCharacters';
 import Search from './Search';
 // import CharacterDetail from './CharacterDetail';
 import Pagination from './Pagination';
+import AccordionFilters from './AccordionFilters';
 
 function App() {
   const [dataCharacters, setDataCharacters] = useState([]);
@@ -46,6 +47,7 @@ function App() {
                 preventSubmitForm={preventSubmitForm}
                 searchCharacter={searchCharacter}
               />
+              <AccordionFilters />
               <ListCharacters results={results} />
               <Pagination
                 pageNumber={pageNumber}
