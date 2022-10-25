@@ -5,7 +5,7 @@ import Card from '../components/Card';
 import '../styles/components/ListCharacters.scss';
 
 function ListCharacters({ results, inputSearch }) {
-  // console.log(results);
+  console.log(results);
   let display;
 
   if (results) {

@@ -17,13 +17,13 @@ function AccordionFilters(props) {
           />
         </Accordion.Body>
       </Accordion.Item>
+
       <Accordion.Item eventKey="1">
         <Accordion.Header>Status</Accordion.Header>
         <Accordion.Body>
           <StatusFilter
             handleFilterByStatus={props.handleFilterByStatus}
             filterByStatus={props.filterByStatus}
-            setPageNumber={props.setPageNumber}
           />
         </Accordion.Body>
       </Accordion.Item>

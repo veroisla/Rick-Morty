@@ -10,29 +10,16 @@ import ClearFilters from './ClearFilters';
 // import CharacterDetail from './CharacterDetail';
 import Pagination from './Pagination';
 import AccordionFilters from './AccordionFilters';
-import SpeciesFilter from './SpeciesFilter';
 
 function App() {
   const [dataCharacters, setDataCharacters] = useState([]);
   let { info, results } = dataCharacters;
   const [inputSearch, setInputSearch] = useState('');
   const [pageNumber, setPageNumber] = useState(1);
-  const [filterBySpecies, setFilterBySpecies] = useState(
-    'Human',
-    'Alien',
-    'Humanoid',
-    'Poopybutthole',
-    'Mythological',
-    'Unknow',
-    'Animal',
-    'Disease',
-    'Robot',
-    'Cronenberg',
-    'Planet'
-  );
+  const [filterBySpecies, setFilterBySpecies] = useState('');
   const [filterByStatus, setFilterByStatus] = useState('');
 
-  let api = `https://rickandmortyapi.com/api/character/?page=${pageNumber}&name=${inputSearch}&status=${filterByStatus}`;
+  let api = `https://rickandmortyapi.com/api/character/?page=${pageNumber}&name=${inputSearch}&status=${filterByStatus}&species=${filterBySpecies}`;
 
   useEffect(() => {
     (async function () {
