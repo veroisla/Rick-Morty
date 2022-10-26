@@ -3,6 +3,8 @@ import Card from '../components/Card';
 
 import '../styles/components/ListCharacters.scss';
 
+// TODO:MEJORAR LISTADO, VER PORQUÉ SALE ERROR GET y ERROR KEY?
+
 function ListCharacters({ results, inputSearch }) {
   // console.log(results);
   let display;
@@ -13,7 +15,7 @@ function ListCharacters({ results, inputSearch }) {
         <section>
           <ul>
             <li key={index}>
-              <Card character={character} />
+              <Card character={character} page="/" />
             </li>
           </ul>
         </section>

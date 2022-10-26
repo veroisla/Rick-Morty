@@ -1,41 +1,51 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
+import { useParams } from 'react-router-dom';
 import '../styles/components/CharacterDetail.scss';
 import '../styles/components/Card.scss';
 
 function CharacterDetail(props) {
-  return (
-    // <div className="card">
-    //   <h2>Detalle personaje</h2>
-    //   <img
-    //     className="card__img"
-    //     src={props.character.image}
-    //     alt={props.character.name}
-    //     title={props.character.name}
-    //   />{' '}
-    //   <div className="card__info">
-    //     <h4 className="card__name">{props.character.name}</h4>
+  let { id } = useParams();
+  const [dataCharacters, setDataCharacters] = useState([]);
+  console.log(dataCharacters);
 
-    //     <p className="card__location">Localización:</p>
-    //     <p className="card__locationName">{props.character.location.name}</p>
-    //     <div
-    //       className={
-    //         props.character.status === 'Dead'
-    //           ? 'card__status card__status--dead'
-    //           : '' || props.character.status === 'unknown'
-    //           ? 'card__status card__status--unknown'
-    //           : 'card__status'
-    //       }
-    //     >
-    //       {props.character.status}
-    //     </div>
-    //   </div>
-    //   <h2>Más info</h2>
-    // </div>
-    <>
-      {' '}
-      <p>mas info</p>
-      <p>{props.name}</p>
-    </>
+  let api = `https://rickandmortyapi.com/api/character/${id}`;
+
+  useEffect(() => {
+    (async function () {
+      let data = await fetch(api).then((res) => res.json());
+      setDataCharacters(data);
+    })();
+  }, [api]);
+
+  return (
+    <div className="card">
+      <h2>Detalle personaje</h2>
+      <img
+        className="card__img"
+        src={dataCharacters.image}
+        alt={dataCharacters.name}
+        title={dataCharacters.name}
+      />{' '}
+      <div className="card__info">
+        <h4 className="card__name">{dataCharacters.name}</h4>
+        <h5>Species: {dataCharacters.species}</h5>
+        <h5>Gender: {dataCharacters.gender}</h5>
+        <h5>Location: {dataCharacters.location?.name}</h5>
+        <h5>Origin:{dataCharacters.origin?.name}</h5>
+
+        <div
+          className={
+            dataCharacters.status === 'Dead'
+              ? ' card__status--dead'
+              : '' || dataCharacters.status === 'unknown'
+              ? 'card__status--unknown'
+              : 'card__status'
+          }
+        >
+          {dataCharacters.status}
+        </div>
+      </div>
+    </div>
   );
 }
 

@@ -9,7 +9,6 @@ const search = (props) => {
         type="text"
         placeholder="Search character"
         onChange={props.searchCharacter}
-        // value={props.setInputSearch}
       ></input>
     </>
   );

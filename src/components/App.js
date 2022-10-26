@@ -1,14 +1,15 @@
 import React, { useEffect, useState } from 'react';
 import { Routes, Route } from 'react-router-dom';
-// import { matchPath, useLocation } from 'react-router';
+import { matchPath, useLocation } from 'react-router';
 
 import '../styles/components/App.scss';
 
 import ListCharacters from './ListCharacters';
 import Form from './Form';
-// import CharacterDetail from './CharacterDetail';
+import CharacterDetail from './CharacterDetail';
 import Pagination from './Pagination';
-// import AccordionFilters from './AccordionFilters';
+
+import AccordionInfo from './AccordionInfo';
 
 function App() {
   const [dataCharacters, setDataCharacters] = useState([]);
@@ -75,9 +76,6 @@ function App() {
                 // CLEAR FILTERS
                 clearFilters={clearFilters}
               />
-
-              {/* <AccordionFilters /> */}
-
               <ListCharacters results={results} inputSearch={inputSearch} />
 
               <Pagination
@@ -88,6 +86,8 @@ function App() {
             </>
           }
         />
+        <Route path="/character/:id" element={<CharacterDetail />} />
+        <Route path="/info" element={<AccordionInfo />} />
       </Routes>
     </div>
   );
