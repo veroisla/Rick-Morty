@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { Routes, Route } from 'react-router-dom';
-import { matchPath, useLocation } from 'react-router';
+import ls from '../services/localStorage';
 
 import '../styles/components/App.scss';
 
@@ -12,12 +12,18 @@ import Pagination from './Pagination';
 import AccordionInfo from './AccordionInfo';
 
 function App() {
-  const [dataCharacters, setDataCharacters] = useState([]);
+  const [dataCharacters, setDataCharacters] = useState(
+    ls.get('dataCharacters', [])
+  );
   let { info, results } = dataCharacters;
-  const [inputSearch, setInputSearch] = useState('');
+  const [inputSearch, setInputSearch] = useState(ls.get('inputSearch', ''));
   const [pageNumber, setPageNumber] = useState(1);
-  const [filterBySpecies, setFilterBySpecies] = useState('');
-  const [filterByStatus, setFilterByStatus] = useState('');
+  const [filterBySpecies, setFilterBySpecies] = useState(
+    ls.get('filterBySpecies', '')
+  );
+  const [filterByStatus, setFilterByStatus] = useState(
+    ls.get('filterByStatus', '')
+  );
 
   let api = `https://rickandmortyapi.com/api/character/?page=${pageNumber}&name=${inputSearch}&status=${filterByStatus}&species=${filterBySpecies}`;
 
@@ -27,6 +33,15 @@ function App() {
       setDataCharacters(data);
     })();
   }, [api]);
+
+  // ---- SAVE IN LOCALSTORAGE ------
+
+  useEffect(() => {
+    ls.set('dataProducts', dataCharacters);
+    ls.set('inputSearch', inputSearch);
+    ls.set('filterBySpecies', filterBySpecies);
+    ls.set('filterByStatus', filterByStatus);
+  }, [dataCharacters, inputSearch, filterBySpecies, filterByStatus]);
 
   // ----- PREVENIR ENVÍO POR DEFECTO -------
   const preventSubmitForm = (ev) => {
@@ -68,6 +83,7 @@ function App() {
               <Form
                 preventSubmitForm={preventSubmitForm}
                 searchCharacter={searchCharacter}
+                inputSearch={inputSearch}
                 //FILTERS
                 handleFilterBySpecies={handleFilterBySpecies}
                 filterBySpecies={filterBySpecies}

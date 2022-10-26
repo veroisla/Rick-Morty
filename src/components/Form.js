@@ -10,7 +10,10 @@ function Form(props) {
   };
   return (
     <form onSubmit={handleSubmitForm}>
-      <Search searchCharacter={props.searchCharacter} />
+      <Search
+        searchCharacter={props.searchCharacter}
+        inputSearch={props.inputSearch}
+      />
 
       <ClearFilters clearFilters={props.clearFilters} />
 
