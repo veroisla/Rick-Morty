@@ -1,9 +1,14 @@
 import React from 'react';
 
-function ClearFilters() {
+function ClearFilters(props) {
+  const handleClearBtn = () => {
+    props.clearFilters();
+  };
   return (
     <section>
-      <button type="reset">Delete filters</button>
+      <button type="reset" onClick={handleClearBtn}>
+        Delete filters
+      </button>
     </section>
   );
 }

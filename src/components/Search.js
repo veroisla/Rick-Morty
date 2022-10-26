@@ -3,12 +3,15 @@ import '../styles/components/filterByName.scss';
 
 const search = (props) => {
   return (
-    <input
-      className="search__input"
-      type="text"
-      placeholder="Search character"
-      onChange={props.searchCharacter}
-    ></input>
+    <>
+      <input
+        className="search__input"
+        type="text"
+        placeholder="Search character"
+        onChange={props.searchCharacter}
+        // value={props.setInputSearch}
+      ></input>
+    </>
   );
 };
 

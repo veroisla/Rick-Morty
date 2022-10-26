@@ -1,15 +1,14 @@
 import React, { useEffect, useState } from 'react';
 import { Routes, Route } from 'react-router-dom';
-import { matchPath, useLocation } from 'react-router';
+// import { matchPath, useLocation } from 'react-router';
 
 import '../styles/components/App.scss';
 
 import ListCharacters from './ListCharacters';
-import Search from './Search';
-import ClearFilters from './ClearFilters';
+import Form from './Form';
 // import CharacterDetail from './CharacterDetail';
 import Pagination from './Pagination';
-import AccordionFilters from './AccordionFilters';
+// import AccordionFilters from './AccordionFilters';
 
 function App() {
   const [dataCharacters, setDataCharacters] = useState([]);
@@ -39,16 +38,23 @@ function App() {
     setPageNumber(1);
   };
 
-  // ----- FILTER SPECIES ------
+  // ----- FILTER SPECIES VALUE ------
 
   const handleFilterBySpecies = (value) => {
     setFilterBySpecies(value);
   };
 
-  // ------ FILTER STATUS -------
+  // ------ FILTER STATUS VALUE -------
 
   const handleFilterByStatus = (value) => {
     setFilterByStatus(value);
+  };
+
+  // ---- CLEAR FILTERS -----
+  const clearFilters = () => {
+    setInputSearch('');
+    setFilterBySpecies('');
+    setFilterByStatus('');
   };
 
   return (
@@ -58,20 +64,19 @@ function App() {
           path="/"
           element={
             <>
-              <form action="" onClick={preventSubmitForm}>
-                <Search
-                  preventSubmitForm={preventSubmitForm}
-                  searchCharacter={searchCharacter}
-                />
-                <ClearFilters />
-                <AccordionFilters
-                  handleFilterBySpecies={handleFilterBySpecies}
-                  filterBySpecies={filterBySpecies}
-                  handleFilterByStatus={handleFilterByStatus}
-                  filterByStatus={filterByStatus}
-                  setPageNumber={setPageNumber}
-                />
-              </form>
+              <Form
+                preventSubmitForm={preventSubmitForm}
+                searchCharacter={searchCharacter}
+                //FILTERS
+                handleFilterBySpecies={handleFilterBySpecies}
+                filterBySpecies={filterBySpecies}
+                handleFilterByStatus={handleFilterByStatus}
+                filterByStatus={filterByStatus}
+                // CLEAR FILTERS
+                clearFilters={clearFilters}
+              />
+
+              {/* <AccordionFilters /> */}
 
               <ListCharacters results={results} inputSearch={inputSearch} />
 
