@@ -1,0 +1,27 @@
+@import "../core/reset.scss";
+@import "../core/Vars.scss";
+
+.hero {
+    height: 100vh;
+    background-image: url(../../images/mobile.jpg);
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.portal {
+    width: 80px;
+    bottom: 0;
+    position: absolute;
+    margin-bottom: 90px;
+    margin-left: 160px;
+}
+
+@media all and(min-width: 768px) {
+    .hero {
+       background-image: url(../../images/dektop.jpg);
+       background-position: center center;
+       background-repeat: no-repeat;
+       background-size: cover;
+    }
+}

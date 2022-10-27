@@ -3,22 +3,21 @@
 
 .card {
     position: relative;
-    border: 2px solid $--color-blue;
+    border: 3px solid $--color-blue;
     display: flex;
     flex-direction: column;
     justify-content: center;
     margin-bottom: 20px;
     border-radius: 10px;
-    color: $--color-dark-blue;
+    color: $--color-dark-blue;  
   
     &__img {
         border-radius: 10px 10px 0 0;
-        margin-bottom: 10px;
+        margin-bottom: 30px;
     }
 
     &__info {
-        margin: 0 15px 15px 15px;
-        height: 90px;      
+        margin: 0 15px 15px 15px;    
         display: flex; 
         flex-direction: column;
         justify-content: space-evenly; 
@@ -26,6 +25,11 @@
 
     &__name {
         margin-bottom: 15px;
+        font-size: 20px;
+    }
+
+    &__location{
+        font-weight: bold;
     }
 
    
@@ -33,12 +37,15 @@
         position: absolute;
         top: 10px;
         right: 10px;
-        background-color: $--color-alive;
         border-radius: 4px;
         color: $--color-white;
         padding: 5px 10px 5px 10px;
         letter-spacing: 0.5px;
         font-weight: 600;
+
+        &--alive {
+        background-color: $--color-alive;
+        }
 
        &--dead {
          background-color: $--color-dead;

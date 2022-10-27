@@ -4,6 +4,7 @@ import ls from '../services/localStorage';
 
 import '../styles/components/App.scss';
 
+import Hero from './Hero';
 import ListCharacters from './ListCharacters';
 import Form from './Form';
 import CharacterDetail from './CharacterDetail';
@@ -76,8 +77,9 @@ function App() {
   return (
     <div className="app">
       <Routes>
+        <Route path="/" element={<Hero />} />
         <Route
-          path="/"
+          path="/characterList"
           element={
             <>
               <Form

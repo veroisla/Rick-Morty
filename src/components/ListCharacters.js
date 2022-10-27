@@ -3,28 +3,25 @@ import Card from '../components/Card';
 
 import '../styles/components/ListCharacters.scss';
 
-// TODO:MEJORAR LISTADO, VER PORQUÉ SALE ERROR GET y ERROR KEY?
+// TODO:MEJORAR LISTADO, VER PORQUÉ SALE ERROR GET
 
 function ListCharacters({ results, inputSearch }) {
-  // console.log(results);
   let display;
-
   if (results) {
     display = results.map((character, index) => {
       return (
-        <section>
-          <ul>
-            <li key={index}>
-              <Card character={character} page="/" />
-            </li>
-          </ul>
-        </section>
+        <li key={index}>
+          <Card character={character} />
+        </li>
       );
     });
   } else {
-    display = <p>No chararters found {inputSearch}</p>;
+    return (
+      <p>
+        Character <span>{inputSearch}</span> doesn´t exist!
+      </p>
+    );
   }
-  return <>{display}</>;
+  return <ul className="list">{display}</ul>;
 }
-
 export default ListCharacters;
