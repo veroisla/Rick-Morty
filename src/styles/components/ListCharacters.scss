@@ -17,14 +17,18 @@
     //     );
         background: linear-gradient(
             #c6ffdd,
-            #11998e,
+            
             #78ffd6,
-            #c6ffdd,
-            #11998e,
-            #78ffd6,
-            #11998e,
-            #c6ffdd,
             );
         
 
+}
+
+@media all and (min-width:768px) {
+    .list {
+        flex-direction: row;
+        flex-wrap: wrap;
+        padding: 100px;
+        justify-content: center;
+    }
 }
