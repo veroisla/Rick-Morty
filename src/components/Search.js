@@ -1,12 +1,13 @@
 import React from 'react';
-import '../styles/components/filterByName.scss';
+
+import '../styles/components/Search.scss';
 
 const search = (props) => {
   return (
     <>
       <input
-        className="search__input"
-        type="text"
+        type="search"
+        class="input"
         placeholder="Search character"
         onChange={props.searchCharacter}
         value={props.inputSearch}

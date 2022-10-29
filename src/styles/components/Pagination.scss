@@ -6,6 +6,7 @@
     flex-direction: row;
     justify-content: center;
     align-items: center;
+    padding-bottom: 40px;
 
     &__btn {
         background-color: $--color-dark-blue;
@@ -13,6 +14,7 @@
         color: $--color-white;
         letter-spacing: 1px;
         border-radius: 8px;
+        margin: 5px;
     }
 
     &__number {
@@ -22,6 +24,7 @@
         text-align: center;
         margin: 2px; 
         border-radius: 50px;
+        background-color: $--color-light-green;
     }
 
     &__active {

@@ -48,7 +48,7 @@ function CharacterDetail() {
           <h5>Species: {dataCharacters.species}</h5>
           <h5>Gender: {dataCharacters.gender}</h5>
           <h5>Location: {dataCharacters.location?.name}</h5>
-          <h5>Origin:{dataCharacters.origin?.name}</h5>
+          <h5>Origin: {dataCharacters.origin?.name}</h5>
         </div>
       </div>
       {/* TODO:CHANGE ARROW COLORS ADD EFFECT */}

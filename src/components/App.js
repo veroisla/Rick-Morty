@@ -82,25 +82,27 @@ function App() {
           path="/characterList"
           element={
             <>
-              <Form
-                preventSubmitForm={preventSubmitForm}
-                searchCharacter={searchCharacter}
-                inputSearch={inputSearch}
-                //FILTERS
-                handleFilterBySpecies={handleFilterBySpecies}
-                filterBySpecies={filterBySpecies}
-                handleFilterByStatus={handleFilterByStatus}
-                filterByStatus={filterByStatus}
-                // CLEAR FILTERS
-                clearFilters={clearFilters}
-              />
-              <ListCharacters results={results} inputSearch={inputSearch} />
-
-              <Pagination
-                pageNumber={pageNumber}
-                info={info}
-                setPageNumber={setPageNumber}
-              />
+              <section className="listCharacters">
+                {' '}
+                <Form
+                  preventSubmitForm={preventSubmitForm}
+                  searchCharacter={searchCharacter}
+                  inputSearch={inputSearch}
+                  //FILTERS
+                  handleFilterBySpecies={handleFilterBySpecies}
+                  filterBySpecies={filterBySpecies}
+                  handleFilterByStatus={handleFilterByStatus}
+                  filterByStatus={filterByStatus}
+                  // CLEAR FILTERS
+                  clearFilters={clearFilters}
+                />
+                <ListCharacters results={results} inputSearch={inputSearch} />
+                <Pagination
+                  pageNumber={pageNumber}
+                  info={info}
+                  setPageNumber={setPageNumber}
+                />
+              </section>
             </>
           }
         />
