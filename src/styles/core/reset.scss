@@ -5,13 +5,12 @@
     list-style-type: none;
     font-family: 'Poppins', sans-serif;
     a:link { text-decoration: none; }
+}
 
-
-a:visited { text-decoration: none; }
-
-
-a:hover { text-decoration: none; }
-
-
-a:active { text-decoration: none; }
+body {
+background-image: url(../../images/bg-3.png);
+background-attachment: fixed;
+background-position: center center;
+background-repeat: no-repeat;
+background-size: cover;
 }
