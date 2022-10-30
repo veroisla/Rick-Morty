@@ -1,4 +1,6 @@
 import React from 'react';
+
+import '../styles/components/Form.scss';
 import Search from './Search';
 import StatusFilter from './StatusFilter';
 import SpeciesFilter from './SpeciesFilter';
@@ -9,13 +11,15 @@ function Form(props) {
     props.PreventSubmitForm();
   };
   return (
-    <form onSubmit={handleSubmitForm}>
-      <Search
-        searchCharacter={props.searchCharacter}
-        inputSearch={props.inputSearch}
-      />
+    <form onSubmit={handleSubmitForm} className="form">
+      <div className="form__searchDelete">
+        <Search
+          searchCharacter={props.searchCharacter}
+          inputSearch={props.inputSearch}
+        />
 
-      <ClearFilters clearFilters={props.clearFilters} />
+        <ClearFilters clearFilters={props.clearFilters} />
+      </div>
 
       <SpeciesFilter
         handleFilterBySpecies={props.handleFilterBySpecies}

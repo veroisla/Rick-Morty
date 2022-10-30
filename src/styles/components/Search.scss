@@ -1,11 +1,37 @@
 @import "../core/reset.scss";
 @import "../core/Vars.scss";
 
+
+
+
+  
+  .input {
+    border: none;
+    border-radius: 4px;
+    display: flex;
+    margin: 50px 0px 50px 0px;
+    height: 40px;
+    width: 180px;
+    padding: 0 10 0 10;
+    background-color: $--color-light-green;
+    font-weight: bold;
+    letter-spacing: 1px;
+    border: 2px solid $--color-pink;
+    color: $--color-dark-blue;
+    
+
+    &:focus-visible {
+        outline-color: $--color-alive;
+     }
+
+  }
+
   
   
   
-   
-   
+  
+  
+
    
    
    

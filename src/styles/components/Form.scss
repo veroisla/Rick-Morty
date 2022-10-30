@@ -1,0 +1,11 @@
+@import "../core/reset.scss";
+@import "../core/Vars.scss";
+
+
+.form {
+    &__searchDelete {
+        display: flex;
+        align-items: center;
+        justify-content: space-evenly;
+    }
+}

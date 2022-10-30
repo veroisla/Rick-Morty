@@ -11,6 +11,7 @@ const search = (props) => {
         placeholder="Search character"
         onChange={props.searchCharacter}
         value={props.inputSearch}
+        maxLength="9"
       ></input>
     </>
   );
