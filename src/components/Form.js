@@ -20,15 +20,17 @@ function Form(props) {
 
         <ClearFilters clearFilters={props.clearFilters} />
       </div>
-
-      <SpeciesFilter
-        handleFilterBySpecies={props.handleFilterBySpecies}
-        filterBySpecies={props.filterBySpecies}
-      />
-      <StatusFilter
-        handleFilterByStatus={props.handleFilterByStatus}
-        filterByStatus={props.filterByStatus}
-      />
+      <div className="form__filters">
+        {' '}
+        <SpeciesFilter
+          handleFilterBySpecies={props.handleFilterBySpecies}
+          filterBySpecies={props.filterBySpecies}
+        />
+        <StatusFilter
+          handleFilterByStatus={props.handleFilterByStatus}
+          filterByStatus={props.filterByStatus}
+        />
+      </div>
     </form>
   );
 }

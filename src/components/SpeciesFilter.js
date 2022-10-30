@@ -1,4 +1,5 @@
 import React from 'react';
+import '../styles/components/Filters.scss';
 
 function SpeciesFilter(props) {
   let species = [
@@ -21,7 +22,7 @@ function SpeciesFilter(props) {
   const renderSpecies = () => {
     return species.map((species, index) => {
       return (
-        <option value={species} key={index}>
+        <option value={species} key={index} className="filter__option">
           {species}
         </option>
       );
@@ -34,8 +35,14 @@ function SpeciesFilter(props) {
         name="species"
         onChange={handleChange}
         value={props.filterBySpecies}
+        className="filter__select filter__species"
       >
-        <option value="">All</option>
+        <option value="" className="filter__option" disabled>
+          Species
+        </option>
+        <option value="" className="filter__option">
+          All
+        </option>
         {renderSpecies()}
       </select>
     </>

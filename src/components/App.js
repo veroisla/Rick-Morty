@@ -2,8 +2,6 @@ import React, { useEffect, useState } from 'react';
 import { Routes, Route } from 'react-router-dom';
 import ls from '../services/localStorage';
 
-import '../styles/components/App.scss';
-
 import Hero from './Hero';
 import ListCharacters from './ListCharacters';
 import Form from './Form';

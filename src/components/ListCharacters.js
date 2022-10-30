@@ -18,7 +18,7 @@ function ListCharacters({ results, inputSearch }) {
   } else {
     return (
       <p className="list__errorMessage">
-        Character <span>{inputSearch}</span> doesn´t exist!
+        Character {inputSearch} doesn´t exist!
       </p>
     );
   }
