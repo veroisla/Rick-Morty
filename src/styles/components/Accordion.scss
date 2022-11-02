@@ -1,3 +1,64 @@
 @import "../core/reset.scss";
 @import "../core/Vars.scss";
 
+
+
+.accordion {
+    &__wrapper {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 60vh;
+    }
+
+    &__accordion {
+        width: 300px;
+    }
+
+    &__item {
+        background-color: $--color-light-blue;
+        padding: 10px 20px;
+        margin-bottom: 5px;
+    }
+
+    &__titleAndContent {
+        font-size: 14px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        cursor: pointer;
+        color: $--color-dark-blue;
+        margin: 10px 5px 10px 5px;
+    }
+
+    &__title {
+     
+    }
+
+    &__content {
+        max-height: 0;
+        overflow: hidden;
+        transition: all 0.5s cubic-bezier(0, 1, 0, 1);
+        // margin-top: 5px;
+
+        &.show {
+            height: auto;
+            max-height: 9999;
+            transition: all 0.5s cubic-bezier(1, 0, 1, 0);
+           
+        }
+    }
+
+}
+
+
+
+
+
+
+
+
+
+
+
+

@@ -8,11 +8,12 @@
     padding: 0 10 0 5;
     justify-content: space-evenly;
     background-color: $--color-nav;
-    color: $--color-dark-blue;
+    color: $--color-links-nav;
     font-weight: 900;
     letter-spacing: 1px;
     text-decoration: none;
     z-index: 100;
+    font-size: 14px;
    
     &__logo {
         width: 80px;
@@ -21,6 +22,7 @@
     &__link {
         width: fit-content;
         height: 25px;
+        margin-top: 15px;
        
 
         &:hover {
