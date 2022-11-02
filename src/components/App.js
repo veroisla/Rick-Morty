@@ -2,12 +2,13 @@ import React, { useEffect, useState } from 'react';
 import { Routes, Route } from 'react-router-dom';
 import ls from '../services/localStorage';
 
+import '../styles/components/App.scss';
 import Hero from './Hero';
+import Nav from './Nav';
 import ListCharacters from './ListCharacters';
 import Form from './Form';
 import CharacterDetail from './CharacterDetail';
 import Pagination from './Pagination';
-
 import AccordionInfo from './AccordionInfo';
 
 function App() {
@@ -73,6 +74,7 @@ function App() {
   };
 
   return (
+    // TODO:METER FLECHA HACIA ARRIBA
     <div className="app">
       <Routes>
         <Route path="/" element={<Hero />} />
@@ -80,29 +82,44 @@ function App() {
           path="/characterList"
           element={
             <>
-              <Form
-                preventSubmitForm={preventSubmitForm}
-                searchCharacter={searchCharacter}
-                inputSearch={inputSearch}
-                //FILTERS
-                handleFilterBySpecies={handleFilterBySpecies}
-                filterBySpecies={filterBySpecies}
-                handleFilterByStatus={handleFilterByStatus}
-                filterByStatus={filterByStatus}
-                // CLEAR FILTERS
-                clearFilters={clearFilters}
-              />
-              <ListCharacters results={results} inputSearch={inputSearch} />
-              <Pagination
-                pageNumber={pageNumber}
-                info={info}
-                setPageNumber={setPageNumber}
-              />
+              <section className="bg__characters">
+                {' '}
+                <Nav />
+                <Form
+                  preventSubmitForm={preventSubmitForm}
+                  searchCharacter={searchCharacter}
+                  inputSearch={inputSearch}
+                  //FILTERS
+                  handleFilterBySpecies={handleFilterBySpecies}
+                  filterBySpecies={filterBySpecies}
+                  handleFilterByStatus={handleFilterByStatus}
+                  filterByStatus={filterByStatus}
+                  // CLEAR FILTERS
+                  clearFilters={clearFilters}
+                />
+                <ListCharacters results={results} inputSearch={inputSearch} />
+                <Pagination
+                  pageNumber={pageNumber}
+                  info={info}
+                  setPageNumber={setPageNumber}
+                />
+              </section>
             </>
           }
         />
         <Route path="/character/:id" element={<CharacterDetail />} />
-        <Route path="/info" element={<AccordionInfo />} />
+        <Route
+          path="/info"
+          element={
+            <>
+              <section className="bg__info">
+                {' '}
+                <Nav />
+                <AccordionInfo />
+              </section>
+            </>
+          }
+        />
       </Routes>
     </div>
   );

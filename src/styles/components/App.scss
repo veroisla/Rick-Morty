@@ -1,0 +1,24 @@
+@import "../core/reset.scss";
+@import "../core/Vars.scss";
+
+
+.bg {
+
+    &__characters {
+       background-image: url(../../images/bg-3.png);
+       background-attachment: fixed;
+       background-position: center center;
+       background-repeat: no-repeat;
+       background-size: cover;
+    }
+
+    &__info {
+       background-image: url(../../images/bg-8.jpg);
+       background-attachment: fixed;
+       background-position: center center;
+       background-repeat: no-repeat;
+       background-size: cover;
+       height: 100vh;
+
+    }
+}
