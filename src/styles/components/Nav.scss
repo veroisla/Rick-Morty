@@ -1,20 +1,27 @@
 @import "../core/reset.scss";
 @import "../core/Vars.scss";
 
+
+a { color: inherit; } 
+
 .nav {
     display: flex;
     flex-direction: row;
     align-items: center;
     padding: 0 10 0 5;
     justify-content: space-evenly;
+    background-color: $--color-blue;
+    background-color: $--color-light-blue;  
     background-color: $--color-nav;
-    color: $--color-links-nav;
+    
+    color: $--color-dark-blue;
+    border-bottom: 2px solid $--color-light-blue;
     font-weight: 900;
     letter-spacing: 1px;
     text-decoration: none;
-    z-index: 100;
-    font-size: 14px;
-   
+    z-index: 200;
+    font-size: 12px;
+
     &__logo {
         width: 80px;
     }
@@ -22,11 +29,26 @@
     &__link {
         width: fit-content;
         height: 25px;
-        margin-top: 15px;
-       
+        text-decoration: none;
+        text-transform: uppercase;       
 
         &:hover {
-            border-bottom: 2px solid $--color-white;
+            border-bottom: 2px solid $--color-light-blue;
+        }
+    }
+}
+
+@media all and (min-width:768px) {
+    .nav {
+       
+       padding-right: 60px;
+       &__logo {
+        width: 100px;
+       }
+
+     
+        &__link {
+            font-size: 16px;
         }
     }
 }

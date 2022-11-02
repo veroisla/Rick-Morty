@@ -1,6 +1,8 @@
 import React, { useState } from 'react';
 
 import '../styles/components/Accordion.scss';
+import { AiOutlinePlus } from 'react-icons/ai';
+import { AiOutlineMinus } from 'react-icons/ai';
 
 function AccordionInfo(props) {
   const [selected, setsSelected] = useState(null);
@@ -22,7 +24,13 @@ function AccordionInfo(props) {
               onClick={() => toggle(index)}
             >
               <h2 className="accordion__title">{item.question}</h2>
-              <span>{selected === index ? '-' : '+'}</span>
+              <span>
+                {selected === index ? (
+                  <AiOutlineMinus className="accordion__icon" />
+                ) : (
+                  <AiOutlinePlus className="accordion__icon" />
+                )}
+              </span>
             </div>
             <div
               className={
@@ -42,14 +50,13 @@ function AccordionInfo(props) {
 
 const data = [
   {
-    question: 'Question 1',
+    question: 'About ',
     answer:
-      'Lorem ipsum dolor sit, amet consectetur adipisicing elit. Est, ipsam cum ',
+      'Rick and Morty is an animated series that follows the exploits of a super scientist and his not-so-bright grandson.',
   },
   {
-    question: 'Question 2',
-    answer:
-      'Lorem ipsum dolor sit, amet consectetur adipisicing elit. Est, ipsam cum ',
+    question: 'Authors',
+    answer: 'Created by Dan Harmon and Justin Roiland  ',
   },
   {
     question: 'Question 3',

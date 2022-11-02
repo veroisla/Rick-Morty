@@ -8,17 +8,19 @@
         display: flex;
         justify-content: center;
         align-items: center;
-        height: 60vh;
+        height: 80vh;
     }
 
     &__accordion {
         width: 300px;
     }
 
-    &__item {
+    &__item { 
         background-color: $--color-light-blue;
         padding: 10px 20px;
         margin-bottom: 5px;
+        border-radius: 5px;
+        border: 3px solid $--color-blue;
     }
 
     &__titleAndContent {
@@ -31,15 +33,12 @@
         margin: 10px 5px 10px 5px;
     }
 
-    &__title {
-     
-    }
 
     &__content {
+        color: $--color-dark-blue;
         max-height: 0;
         overflow: hidden;
         transition: all 0.5s cubic-bezier(0, 1, 0, 1);
-        // margin-top: 5px;
 
         &.show {
             height: auto;
@@ -52,7 +51,26 @@
 }
 
 
+@media all and (min-width:768px) {
 
+    .accordion {
+        &__accordion {
+            width: 600px;
+        }
+
+    }
+}
+
+
+@media all and (min-width:768px) {
+
+    .accordion {
+        &__accordion {
+            width: 800px;
+        }
+
+    }
+}
 
 
 
