@@ -25,7 +25,7 @@ function Nav() {
         </NavLink>
         <NavLink to={'/info'}>
           <li className="nav__link" title="Go to Info">
-            Information
+            Main characters
           </li>
         </NavLink>
       </ul>

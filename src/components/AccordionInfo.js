@@ -4,6 +4,8 @@ import '../styles/components/Accordion.scss';
 import { AiOutlinePlus } from 'react-icons/ai';
 import { AiOutlineMinus } from 'react-icons/ai';
 
+import rickSanchez from '../images/faces/rickSanchez.png';
+
 function AccordionInfo(props) {
   const [selected, setsSelected] = useState(null);
 
@@ -24,6 +26,8 @@ function AccordionInfo(props) {
               onClick={() => toggle(index)}
             >
               <h2 className="accordion__title">{item.question}</h2>
+              {/* <img src={item.imgUrl} alt="" className="accordion__img" /> */}
+              <img src={item.imgUrl} alt="" />
               <span>
                 {selected === index ? (
                   <AiOutlineMinus className="accordion__icon" />
@@ -50,18 +54,30 @@ function AccordionInfo(props) {
 
 const data = [
   {
-    question: 'About ',
+    question: 'Rick Sanchez',
+    imgUrl: '../images/faces/rickSanchez.png',
     answer:
-      'Rick and Morty is an animated series that follows the exploits of a super scientist and his not-so-bright grandson.',
+      'A genius scientist and alcoholic whose inventions and experiments serve as the basis for the episodes. The grandfather of Morty Smith and Summer Smith, and the father of Beth. ',
   },
   {
-    question: 'Authors',
-    answer: 'Created by Dan Harmon and Justin Roiland  ',
+    question: 'Morty Smith',
+    answer:
+      'Ricks impressionable and socially awkward teenage grandson who is often dragged along on his grandfathers escapades.',
   },
   {
-    question: 'Question 3',
+    question: 'Jerry Smith ',
     answer:
-      'Lorem ipsum dolor sit, amet consectetur adipisicing elit. Est, ipsam cum ',
+      'Mortys insecure father, whose disapproval of Ricks influence on Morty only deepens his marital troubles with Beth.',
+  },
+  {
+    question: 'Beth Smith',
+    answer:
+      ' Mortys holier-than-thou mother who is a cardiac surgeon for horses. Beth seems to have problems in her marriage with Jerry and usually considers leaving him for another guy.',
+  },
+  {
+    question: 'Summer Smith',
+    answer:
+      'Mortys angst-ridden older sister who occasionally joins Rick on his adventures. ',
   },
 ];
 export default AccordionInfo;
