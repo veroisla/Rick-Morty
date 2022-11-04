@@ -5,6 +5,7 @@ import ls from '../services/localStorage';
 import '../styles/components/App.scss';
 import Hero from './Hero';
 import Nav from './Nav';
+import ArrowUp from './ArrowUp';
 import ListCharacters from './ListCharacters';
 import Form from './Form';
 import CharacterDetail from './CharacterDetail';
@@ -97,6 +98,7 @@ function App() {
                   // CLEAR FILTERS
                   clearFilters={clearFilters}
                 />
+                <ArrowUp />
                 <ListCharacters results={results} inputSearch={inputSearch} />
                 <Pagination
                   pageNumber={pageNumber}

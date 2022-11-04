@@ -18,7 +18,8 @@ function ListCharacters({ results, inputSearch }) {
   } else {
     return (
       <p className="list__errorMessage">
-        Character {inputSearch} doesn´t exist!
+        Character <span className="list__errorName"> {inputSearch} </span>{' '}
+        doesn´t exist!
       </p>
     );
   }
