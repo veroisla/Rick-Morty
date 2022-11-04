@@ -3,8 +3,6 @@ import Card from '../components/Card';
 
 import '../styles/components/ListCharacters.scss';
 
-// TODO:MEJORAR LISTADO, VER PORQUÉ SALE ERROR GET
-
 function ListCharacters({ results, inputSearch }) {
   let display;
   if (results) {

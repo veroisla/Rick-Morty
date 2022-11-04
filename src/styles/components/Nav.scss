@@ -30,13 +30,7 @@ a { color: inherit; }
         width: fit-content;
         height: 25px;
         text-decoration: none;
-        text-transform: uppercase;       
-
-        // &:hover {
-            
-        //     border-bottom: 2px solid $--color-white;
-        // }
-       
+        text-transform: uppercase;              
     }
 }
 
@@ -48,8 +42,7 @@ a { color: inherit; }
        &__logo {
         width: 100px;
        }
-
-     
+  
         &__link {
             font-size: 16px;
         }

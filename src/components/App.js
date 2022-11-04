@@ -75,7 +75,6 @@ function App() {
   };
 
   return (
-    // TODO:METER FLECHA HACIA ARRIBA
     <div className="app">
       <Routes>
         <Route path="/" element={<Hero />} />

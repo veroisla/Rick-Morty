@@ -51,7 +51,6 @@ function CharacterDetail() {
           <h5>Origin: {dataCharacters.origin?.name}</h5>
         </div>
       </div>
-      {/* TODO:CHANGE ARROW COLORS ADD EFFECT */}
       <Link to={'/characterList'}>
         <CgArrowLongLeft
           alt="Back to home"

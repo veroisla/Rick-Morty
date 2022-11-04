@@ -4,8 +4,6 @@ import '../styles/components/Accordion.scss';
 import { AiOutlinePlus } from 'react-icons/ai';
 import { AiOutlineMinus } from 'react-icons/ai';
 
-import rickSanchez from '../images/faces/rickSanchez.png';
-
 function AccordionInfo(props) {
   const [selected, setsSelected] = useState(null);
 
@@ -26,7 +24,6 @@ function AccordionInfo(props) {
               onClick={() => toggle(index)}
             >
               <h2 className="accordion__title">{item.question}</h2>
-              {/* <img src={item.imgUrl} alt="" className="accordion__img" /> */}
               <img src={item.imgUrl} alt="" />
               <span>
                 {selected === index ? (
@@ -55,7 +52,6 @@ function AccordionInfo(props) {
 const data = [
   {
     question: 'Rick Sanchez',
-    imgUrl: '../images/faces/rickSanchez.png',
     answer:
       'A genius scientist and alcoholic whose inventions and experiments serve as the basis for the episodes. The grandfather of Morty Smith and Summer Smith, and the father of Beth. ',
   },

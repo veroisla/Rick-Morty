@@ -3,12 +3,45 @@
 
 .hero {
     height: 100vh;
-    background-image: url(../../images/mobile.jpg);
-    background-image: url(../../images/bg-5.jpg);
+    background-image: url(../../images/bg-1.png);
     background-position: center center;
     background-repeat: no-repeat;
     background-size: cover;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+ 
+    &__names {
+        width: 350px;
+    }
+
+    &__characters {
+      height: 400px;
+      margin-left: 40px;
+    }
+    
+    &__enterBtn {
+    padding: 15px;
+    background-color: $--color-alive;
+    background-color: $--color-white;
+    border: none;
+    border-radius: 5px;
+    color: $--color-dark-blue;
+    font-size: 14px;
+    text-transform:uppercase;
+    font-weight: bold;
+    letter-spacing: 1px;
+    border: 2px solid $--color-dark-pink;
+    transition: background-color 0.5s ease-out;
+
+    &:hover {
+        background-color: $--color-nav;
+    }
 }
+
+}
+
 
 .portal {
     width: 80px;
@@ -19,10 +52,11 @@
 }
 
 @media all and(min-width: 768px) {
+  
     .hero {
-       background-image: url(../../images/dektop.jpg);
-       background-position: center center;
-       background-repeat: no-repeat;
-       background-size: cover;
+        &__names {
+        width: 500px;
+    } 
     }
+   
 }

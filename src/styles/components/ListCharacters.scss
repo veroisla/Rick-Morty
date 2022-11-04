@@ -19,8 +19,8 @@
 
      &__errorName {
         font-style: italic;
-        margin: 0 3px 0 3px;    
-        font-size: 18px;  
+        margin: 0 4px 0 4px;    
+        font-size: 18px; 
      }
 }
 
@@ -34,15 +34,19 @@
         justify-content: center;
 
         &__errorMessage {
-            margin-bottom: 600px;
+            margin-bottom: 300px;
+            font-size: 30px;
         } 
+        &__errorName  {
+            font-size: 25px;
+        }
     }
 }
 
 @media all and (min-width:1200px) {
     .list {
         &__errorMessage {
-            margin-bottom: 750px;
+            margin-bottom: 558px;
         } 
     }
 }
